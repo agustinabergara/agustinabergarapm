@@ -2,222 +2,249 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="color-scheme" content="light only">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Resume of Agustina Bergara Isasi, Product & Project Manager.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Agustina Bergara Isasi - Resume">
+<meta property="og:description" content="Product Manager with 6 years building digital products.">
+<meta property="og:url" content="https://agustinabergara.github.io/agustinabergarapm/resume.html">
+<meta property="og:image" content="https://agustinabergara.github.io/agustinabergarapm/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://agustinabergara.github.io/agustinabergarapm/og-image.png">
+<meta name="description" content="Resume of Agustina Bergara Isasi, Product Manager with 6 years building digital products.">
 <title>Agustina Bergara Isasi - Resume</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
-<style>:root {
-  color-scheme: light;
+<style>
+/* Layout: slim sticky header, a compact hero that says who she is and what she does, a proof strip of real numbers,
+   then a 6-column grid: the two cases with numbers are wide, the other three sit in a row below. Each case opens in a side panel. */
+:root {
   --bg: #FFFFFF;
   --panel: #FBF7F2;
   --fg: #2B1D14;
   --muted: #6B5A4C;
   --line: #EFE6DA;
-  --accent: #CF4318;
+  --accent: #D9481C;
+  --accent-ink: #CF4318;
   --tint: #FFE7DA;
+  --scrim: rgba(43, 29, 20, 0.45);
+  --good: #2E9E6B;
+  --g1: #D9481C;
+  --g2: #F48A4A;
+  --cta1: #D3441A;
+  --cta2: #A92F0E;
+  --glow: rgba(217, 72, 28, 0.16);
+  --s-live: #17724B; --s-live-bg: #E1F3E9;
+  --s-grow: #C2411A; --s-grow-bg: #FFE7DA;
+  --s-use: #8A5A00; --s-use-bg: #FFEFC7;
+  --s-test: #2F4FA3; --s-test-bg: #E4EBFA;
   --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
   --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "DM Mono", ui-monospace, Menlo, Consolas, monospace;
 }
-
-
-
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
-a{color:inherit}
-.top{border-bottom:1px solid var(--line)}
-.top-in{max-width:860px;margin:auto;padding:12px clamp(16px,4vw,32px);display:flex;justify-content:space-between;align-items:center}
-.top a.btn{padding:8px 18px;border-radius:999px;background:var(--tint);color:var(--accent)}
-.top a.btn:hover{background:var(--line)}
-.endcta{text-align:center;padding:12px 0 0}.endcta p{font:700 1.5rem/1.2 var(--display);margin:0 0 16px}.endcta a{display:inline-block;padding:10px 24px;border-radius:999px;background:var(--tint);color:var(--accent);text-decoration:none;font-weight:500}.endcta a:hover{background:var(--line)}
-.top a{text-decoration:none;color:var(--muted);font:500 .9375rem/1.2 var(--body)}
-.top a:hover{color:var(--accent)}
-main{max-width:860px;margin:auto;padding:36px clamp(16px,4vw,32px) 80px;display:grid;gap:52px}
-.id{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
-.photo{width:144px;height:144px;border-radius:50%;object-fit:cover}
-h1{font:700 clamp(2.25rem,6vw,3.5rem)/1 var(--display);letter-spacing:-.02em;margin:0 0 12px}
-.chip{display:inline-block;padding:4px 14px;border-radius:999px;background:var(--tint);color:var(--accent);font:500 .9375rem/1.4 var(--body)}
-.avail{display:inline-flex;align-items:center;gap:8px;margin-left:8px;font-size:.9375rem;color:var(--muted)}
-.adot{width:8px;height:8px;border-radius:50%;background:#2E9E6B}
-.contact{display:flex;gap:6px 18px;flex-wrap:wrap;color:var(--muted);font-size:.9375rem;margin:14px 0 0}
-.contact a{text-underline-offset:3px;text-decoration-color:var(--line)}
-.about{font-size:1.25rem;line-height:1.55;margin:0;max-width:34em}
-.about em{font-style:normal;color:var(--accent)}
-.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.num{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px}
-.num strong{display:block;font:700 clamp(2rem,5vw,2.75rem)/.95 var(--display);color:var(--accent);margin-bottom:8px}
-.num span{font-size:.875rem;color:var(--muted);line-height:1.4;display:block}
-@media(max-width:700px){.nums{grid-template-columns:1fr 1fr}}
-h2{font:500 .8125rem/1.3 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
-.row{display:grid;grid-template-columns:150px 1fr;gap:6px 28px;padding:22px 0;border-top:1px solid var(--line)}
-.row:last-child{border-bottom:1px solid var(--line)}
-.when{font:500 .8125rem/1.5 var(--mono);color:var(--muted);letter-spacing:.04em;padding-top:5px}
-.row h3{font:700 1.25rem/1.25 var(--display);margin:0}
-.row .co{color:var(--muted);margin:2px 0 8px;font-size:.9375rem}
-.row p{margin:0 0 6px}
-.row ul{margin:6px 0 0;padding-left:1.1em;display:grid;gap:3px}
-.win{margin-top:12px!important;font-weight:600;color:var(--fg);background:var(--tint);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:8px 14px}
-.win b{color:var(--accent);font:700 1.125rem/1 var(--display);margin-right:2px}
-.row.small h3{font-size:1.0625rem}
-@media(max-width:700px){.row{grid-template-columns:1fr}.when{padding-top:0}}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:44px}
-@media(max-width:700px){.two{grid-template-columns:1fr}}
-.it{margin-bottom:12px;line-height:1.4}.it b{display:block;font-weight:600}.it span{color:var(--muted);font-size:.875rem}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span{padding:6px 14px;border-radius:999px;background:var(--panel);border:1px solid var(--line);font-size:.9375rem}
-.skillgroup{margin-bottom:18px}.skillgroup p{margin:0 0 8px;color:var(--muted);font-size:.9375rem}
-.acts{display:flex;gap:14px;align-items:center}
-.top-in a,.acts a{white-space:nowrap}
-@media(max-width:480px){.top-in{flex-wrap:wrap;gap:6px 8px;padding-inline:16px}.acts{width:100%;justify-content:space-between;gap:10px}.top-in a,.acts a{font-size:.875rem}.acts .btn{padding:6px 14px}}
-@page{size:A4;margin:10mm 12mm}
-@media print{
-.scr{display:none}.prt{display:inline}
-.two{break-inside:avoid;grid-template-columns:1.5fr 1fr}
-.it b{display:inline}.it span{font-size:inherit}
-.top,.endcta{display:none}
-body{background:#fff;font-size:9.6pt;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-main{max-width:none;padding:0;gap:26px}
-.photo{width:108px;height:108px}
-h1{font-size:25pt;margin-bottom:8px}
-.id{gap:18px}
-.about{font-size:10.5pt;max-width:none}
-h2{margin-bottom:14px}
-.row{grid-template-columns:100px 1fr;padding:8px 0;gap:3px 18px;break-inside:avoid}
-.row h3{font-size:12pt}.row.small h3{font-size:11pt}
-.row ul{gap:1px}
-.win{padding:6px 12px;margin-top:9px!important}
-.win b{font-size:11pt}
-.num{display:none}
-.two{gap:40px}
-.it{margin-bottom:11px}
-.skillgroup{margin-bottom:16px}.skillgroup p{margin-bottom:8px}
-.chips{gap:8px}.chips span{padding:3px 10px;font-size:8.5pt}
-.contact{margin-top:8px;font-size:9.5pt}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17100B; --panel: #211710; --fg: #F4EBE2; --muted: #B9A898; --line: #35281E;
+    --accent: #F27A4C; --accent-ink: #F58C63; --tint: #3A2217; --scrim: rgba(0,0,0,.6); --good: #4CC38A;
+    --g1: #F27A4C; --g2: #F9AE63; --cta1: #C2461B; --cta2: #8A2A0F; --glow: rgba(242, 122, 76, 0.2);
+    --s-live: #6FD6A0; --s-live-bg: #173325;
+    --s-grow: #F58C63; --s-grow-bg: #3A2217;
+    --s-use: #F2C46A; --s-use-bg: #3A2D12;
+    --s-test: #9DB5F2; --s-test-bg: #1B2644;
+    color-scheme: dark;
+  }
 }
-@media screen{.prt{display:none}}
+:root[data-theme="dark"] {
+  --bg: #17100B; --panel: #211710; --fg: #F4EBE2; --muted: #B9A898; --line: #35281E;
+  --accent: #F27A4C; --accent-ink: #F58C63; --tint: #3A2217; --scrim: rgba(0,0,0,.6); --good: #4CC38A;
+  --g1: #F27A4C; --g2: #F9AE63; --cta1: #C2461B; --cta2: #8A2A0F; --glow: rgba(242, 122, 76, 0.2);
+  --s-live: #6FD6A0; --s-live-bg: #173325;
+  --s-grow: #F58C63; --s-grow-bg: #3A2217;
+  --s-use: #F2C46A; --s-use-bg: #3A2D12;
+  --s-test: #9DB5F2; --s-test-bg: #1B2644;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { overflow-x: clip; background: var(--bg); color: var(--fg); font: 400 17px/1.6 var(--body); -webkit-font-smoothing: antialiased; padding-inline: clamp(16px, 4vw, 32px); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.wrap { max-width: 1080px; margin-inline: auto; }
+.label { font: 500 0.75rem/1.3 var(--mono); letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); margin: 0; }
 
-/* flat editorial design, matches the portfolio */
-h2{font:700 1.375rem/1.2 var(--display);letter-spacing:-.01em;text-transform:none;color:var(--fg);border-bottom:2px solid var(--fg);padding-bottom:8px;margin:0 0 4px}
-h2 + .row{border-top:0}
-.num{border-radius:0;border:0;border-top:2px solid var(--fg);background:transparent;padding:14px 0 0}
-.chips span{border-radius:4px;background:transparent}
-.win{border-radius:0}
-@media print{h2{font-size:13pt;margin-bottom:4px;padding-bottom:5px}}
+/* Header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); margin-inline: calc(-1 * clamp(16px, 4vw, 32px)); padding-inline: clamp(16px, 4vw, 32px); }
+.top-in { max-width: 1080px; margin-inline: auto; padding-block: 12px; display: flex; align-items: center; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; }
+.name { font: 700 1.125rem/1.2 var(--display); letter-spacing: -0.01em; margin: 0; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.nav { display: flex; align-items: center; gap: 4px; }
+.nav a { text-decoration: none; padding: 8px 12px; font: 500 0.9375rem/1.2 var(--body); color: var(--muted); }
+.nav a:hover { color: var(--fg); }
+.nav a.pill { background: var(--tint); color: var(--accent-ink); border-radius: 999px; padding: 7px 16px; }
+@media (max-width: 560px) { .name .label { display: none; } .nav a { padding: 8px 8px; font-size: 0.875rem; } .nav a.pill { padding: 6px 12px; } }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 48px; align-items: center; padding-block: clamp(40px, 7vw, 72px) 8px; }
+.hero { position: relative; isolation: isolate; }
+.hero::before { content: ""; position: absolute; z-index: -1; right: -90px; top: -60px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(closest-side, var(--glow), transparent 72%); pointer-events: none; }
+.me-wrap { position: relative; isolation: isolate; width: clamp(112px, 16vw, 168px); }
+.me-wrap .me { width: 100%; }
+.hero-text { display: grid; gap: 20px; justify-items: start; min-width: 0; }
+.avail { display: inline-flex; align-items: center; gap: 8px; margin: 0; padding: 6px 14px; border-radius: 999px; background: var(--tint); color: var(--accent-ink); font: 500 0.875rem/1.3 var(--body); }
+.avail i { width: 8px; height: 8px; border-radius: 50%; background: var(--good); flex: none; }
+.hero h1 { font: 700 clamp(2.25rem, 5.6vw, 3.625rem)/1.04 var(--display); letter-spacing: -0.025em; margin: 0; max-width: 17ch; text-wrap: balance; }
+.hero h1 em { font-style: normal; color: var(--accent-ink);  }
+.hero .lede { max-width: 50ch; font-size: 1.125rem; color: var(--muted); margin: 0; }
+.cta { display: flex; flex-wrap: wrap; gap: 10px 12px; }
+.btn { display: inline-block; text-decoration: none; padding: 12px 22px; border-radius: 999px; font: 600 0.9375rem/1.2 var(--body); background: linear-gradient(135deg, var(--cta1), var(--cta2)); color: #fff; transition: transform .15s, opacity .15s; box-shadow: 0 8px 20px -10px var(--cta2); }
+.btn:hover { opacity: .9; }
+.btn.alt { background: transparent; box-shadow: none; color: var(--fg); box-shadow: inset 0 0 0 1.5px var(--line); }
+.btn.alt:hover { box-shadow: inset 0 0 0 1.5px var(--fg); }
+.me { width: clamp(112px, 16vw, 168px); aspect-ratio: 1; border-radius: 50%; object-fit: cover; }
+@media (max-width: 680px) { .hero { grid-template-columns: minmax(0, 1fr); } .me-wrap { grid-row: 1; width: 88px; } .hero::before { right: -160px; width: 420px; height: 420px; } }
+
+/* Proof strip */
+.proof { margin: 36px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); }
+.proof li { padding: 18px 20px; display: grid; gap: 4px; align-content: start; border-left: 1px solid var(--line); }
+.proof li:first-child { border-left: 0; padding-left: 0; }
+.proof b { font: 700 clamp(1.75rem, 3.6vw, 2.5rem)/1 var(--display); letter-spacing: -0.03em; color: var(--accent-ink); font-variant-numeric: tabular-nums; }
+.proof span { font-size: 0.875rem; line-height: 1.35; color: var(--muted); }
+@media (max-width: 760px) {
+  .proof { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .proof li:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .proof li:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+
+
+/* Resume */
+.hero .ident { display: grid; gap: 14px; justify-items: start; min-width: 0; }
+.hero h1.nm { font: 700 clamp(2.25rem, 5.4vw, 3.5rem)/1.02 var(--display); letter-spacing: -0.025em; margin: 0; max-width: none; }
+.role-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.role { font: 500 0.8125rem/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; padding: 7px 12px; border-radius: 8px; background: var(--tint); color: var(--accent-ink); }
+.contacts { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; font-size: 0.9375rem; color: var(--muted); }
+.contacts a { text-underline-offset: 3px; text-decoration-color: var(--line); }
+.contacts a:hover { color: var(--accent-ink); }
+.about { margin: 28px 0 0; max-width: 60ch; font-size: 1.1875rem; line-height: 1.55; }
+.about em { font-style: normal; font-weight: 600; color: var(--accent-ink); }
+.sec { padding-block: 48px 0; }
+.sec h2 { font: 700 1.75rem/1.1 var(--display); letter-spacing: -0.02em; margin: 0 0 8px; }
+.sec h2 small { font: 500 0.75rem/1 var(--mono); letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); margin-left: 12px; vertical-align: 3px; }
+.row { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 6px 32px; padding-block: 26px; border-top: 1px solid var(--line); }
+.row:first-of-type { border-top: 0; }
+.when { font: 500 0.75rem/1.6 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-top: 6px; }
+.row h3 { font: 700 1.3125rem/1.2 var(--display); letter-spacing: -0.01em; margin: 0; }
+.co { margin: 2px 0 10px; color: var(--accent-ink); font-weight: 600; font-size: 0.9375rem; }
+.row p { margin: 0 0 8px; max-width: 64ch; }
+.row ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 6px; max-width: 64ch; }
+.row li::marker { color: var(--accent); }
+.res { display: block; margin: 16px 0 0 !important; padding: 12px 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; font-weight: 500; }
+.res::before { content: "Result"; display: inline-block; margin-right: 12px; font: 500 0.6875rem/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.res b { font: 700 1.125rem/1 var(--display); background: linear-gradient(95deg, var(--g1), var(--g2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.row.small { padding-block: 18px; }
+.row.small h3 { font-size: 1.125rem; }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; }
+.it { padding-block: 12px; border-top: 1px solid var(--line); font-size: 0.9375rem; line-height: 1.45; }
+.it span { color: var(--muted); display: block; }
+.sg { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 8px 32px; padding-block: 16px; border-top: 1px solid var(--line); align-items: baseline; }
+.sg p { margin: 0; font: 500 0.75rem/1.6 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { padding: 6px 12px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); font-size: 0.875rem; line-height: 1.3; }
+.contact { margin-block: 56px; padding: clamp(24px, 5vw, 44px); border-radius: 20px; background: linear-gradient(135deg, #FFF1E8 0%, #FFD9C4 100%); border: 1px solid #FFD0B8; box-shadow: 0 18px 40px -18px rgba(217,72,28,.35); color: var(--fg); display: grid; gap: 14px; justify-items: start; }
+.contact h2 { font: 700 clamp(1.75rem, 4vw, 2.5rem)/1.05 var(--display); letter-spacing: -0.02em; margin: 0; max-width: 18ch; text-wrap: balance; }
+.contact p { margin: 0; color: var(--muted); max-width: 48ch; }
+.contact .label { color: var(--accent-ink); }
+.contact .mail { color: var(--fg); font: 500 1rem/1.3 var(--mono); overflow-wrap: anywhere; text-underline-offset: 3px; }
+.me-wrap { position: relative; isolation: isolate; width: clamp(104px, 15vw, 150px); }
+@media (max-width: 720px) {
+  .row, .sg { grid-template-columns: minmax(0, 1fr); }
+  .when { padding-top: 0; }
+  .two { grid-template-columns: minmax(0, 1fr); }
+  .res::before { display: block; margin: 0 0 6px; }
+}
+@page { size: A4; margin: 10mm 12mm; }
+@media print { .top, .contact, .hero::before { display: none; } body { padding-inline: 0; } .res b { -webkit-text-fill-color: currentColor; background: none; color: var(--accent-ink); } }
 </style>
+
 </head>
 <body>
-<header class="top"><div class="top-in"><a href="./">&larr; Portfolio</a><span class="acts"><a class="plain" href="Agustina_Bergara_Resume.pdf" download>Download PDF</a><a class="plain" href="Agustina_Bergara_ES.pdf" download>Descargar en español</a><a class="btn" href="mailto:agustina.bergara@gmail.com">Contact</a></span></div></header>
-<main>
-<section class="id">
-<img class="photo" src="cv-photo.jpg" alt="Agustina Bergara Isasi">
-<div><h1>Agustina Bergara Isasi</h1><span class="chip">Product Manager</span><span class="avail"><span class="adot"></span>Available for freelance PM projects</span>
-<p class="contact"><a href="mailto:agustina.bergara@gmail.com">agustina.bergara@gmail.com</a><a href="https://www.linkedin.com/in/agustina-bergara-isasi/" target="_blank" rel="noopener"><span class="scr">LinkedIn</span><span class="prt">linkedin.com/in/agustina-bergara-isasi</span></a><span>Punta del Este, Uruguay</span></p><p class="contact">Spanish native · English C2 · Works with US and Canada clients</p></div>
-</section>
-<p class="about">Product Manager with 5 years building and improving digital products for US startups, UNICEF and real estate. Creative by nature and an Industrial Designer by training, I now build <em>AI-powered products</em>.</p>
-
-<section><h2><span class="em" aria-hidden="true">💼</span> Experience</h2>
-<div class="row"><div class="when">JULY 2026 – NOW</div><div><h3>Freelance Product Manager</h3><p class="co">Independent</p>
-<p>Idea to launch: discovery, prototypes and MVPs, development and roadmap.</p>
-<ul><li><b>Car dealership in Canada</b> (in progress): a system run by an AI agent to manage service appointments and auto parts sales. It reduces the parts customers order and never pick up, and gives a more complete follow-up of vehicle warranties. One dealership uses it, 5 more are waiting.</li><li><b>Maketa Wellness</b> (for a physio in Punta del Este): rehab routines app, used by 50 patients so far. Now building scheduling and patient rehab tracking.</li></ul>
-<p class="win">In my freelance projects, cut MVP prototyping time from <b>2 weeks to 2 days</b>.</p></div></div>
-<div class="row small"><div class="when">SEPT 2026</div><div><h3>Own projects</h3><p class="co">Independent</p><p><b>Ola, dónde estás?</b> A surf app that tells you which beach has your kind of wave today. Designed and built by me with Claude Code.</p></div></div>
-<div class="row"><div class="when">MAR 2025 – JULY 2026</div><div><h3>Project &amp; Product Manager</h3><p class="co">Buzhi · Uruguay</p>
-<p>Ran real estate development projects in José Ignacio and Balneario Buenos Aires on my own, reporting directly to the CEO.</p>
-<ul><li>Found and analyzed new investment and development opportunities.</li><li>Researched and managed vendors and budgets.</li><li>Optimized timelines, milestones and deliverables.</li></ul>
-<p class="win">Reduced construction lead times by <b>15%</b> by spotting risks early.</p></div></div>
-<div class="row"><div class="when">2024 – 2025</div><div><h3>Product Marketing Manager</h3><p class="co">UNICEF · Uruguay</p>
-<p>Consultancy to design and launch a new product that reaches new audiences and improves donor loyalty.</p>
-<ul><li>Discovery, development and launch of the physical and digital subscription “Fábrica de Momentos”, later taken as a reference case for other countries.</li><li>Coordinated a cross-functional team of designers, marketing, developers and data specialists.</li></ul>
-<p class="win">Launched in <b>9 months</b> and reached <b>100 subscribers</b> in the first 3.</p></div></div>
-<div class="row"><div class="when">2021 – 2024</div><div><h3>Product Manager</h3><p class="co">Bixlabs · Uruguay – USA</p>
-<p>Built digital, user-centered products for startups and corporate clients in the United States.</p>
-<ul><li>From discovery to launch, including user research and interviews for UX testing.</li><li>Planned, prioritized and managed the roadmap and backlog.</li><li>Led day to day work with design, QA and engineering, and talked directly with US clients and founders.</li></ul>
-<p class="win">Acapedia: <b>800 doctors</b> earned their CME credits in the app in its first year.</p></div></div>
-<div class="row small"><div class="when">2019 – 2021</div><div><h3>Product Operations Manager</h3><p class="co">UOOPAA · Buenos Aires</p>
-<p>Smartphone cases, from market research to industrial manufacturing.</p>
-<p class="win">Cut mold development from <b>8 to 2 weeks</b>.</p></div></div>
-<div class="row small"><div class="when">2012 – 2019</div><div><h3>Industrial Designer</h3><p class="co">Agencia BEE · Buenos Aires</p><p>Commercial furniture, exhibition stands and retail POP displays.</p></div></div>
-</section>
-
-<div class="two">
-<section><h2><span class="em" aria-hidden="true">🏅</span> Certifications</h2>
-<div class="it"><b>Product Management: Foundations &amp; Stakeholder Collaboration</b> <span>· IBM online school</span></div><div class="it"><b>Product Management: An Introduction</b> <span>· IBM online school</span></div><div class="it"><b>AI Bootcamp · 2026</b> <span>· Jump Academy</span></div><div class="it"><b>Product Marketing Manager · 2023</b> <span>· PMM School</span></div>
-</section>
-<section><h2><span class="em" aria-hidden="true">🎓</span> Education</h2>
-<div class="it"><b>Product Manager · 2020</b> <span>· Coder House</span></div>
-<div class="it"><b>Industrial Design · 2014 – 2019</b> <span>· Universidad de Palermo, Argentina</span></div><div class="it"><b>English teacher · 2011 – 2012</b> <span>· Alianza de Estados Unidos, Uruguay</span></div>
-</section></div>
-<section><h2><span class="em" aria-hidden="true">🧰</span> Skills</h2>
-<div class="skillgroup"><p>Product</p><div class="chips"><span>Product discovery</span><span>Roadmap &amp; backlog</span><span>User research &amp; testing</span><span>Agile</span><span>Client &amp; vendor management</span><span>Decision making</span><span>Teamwork</span><span>Active listening</span></div></div>
-<div class="skillgroup"><p>AI tools</p><div class="chips"><span>Claude Code</span><span>Claude</span><span>ChatGPT</span><span>Gemini</span><span>NotebookLM</span></div></div>
-<div class="skillgroup"><p>Tools</p><div class="chips"><span>Figma</span><span>Notion</span><span>Miro</span><span>ClickUp</span><span>Asana</span><span>Trello</span><span>Monday</span><span>Netlify</span><span>GitHub</span><span>Canva</span><span>G-Suite</span></div></div>
-</section>
-<section class="endcta"><p>Have a problem worth solving?</p><a href="mailto:agustina.bergara@gmail.com">Get in touch</a></section>
-</main>
-<style>
-.cx-ov{position:fixed;inset:0;background:rgba(43,29,20,.45);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px}
-.cx-ov.on{display:flex}
-.cx-box{background:#fff;color:#2B1D14;border-radius:16px;max-width:380px;width:100%;padding:24px;box-shadow:0 20px 50px rgba(0,0,0,.25);font-family:inherit;text-align:center}
-.cx-box h4{margin:0 0 6px;font-size:20px}
-.cx-box p{margin:0 0 14px;font-size:15px;color:#6B5A4C}
-.cx-mail{display:block;background:#FBF8F2;border-radius:10px;padding:12px;font-weight:600;font-size:16px;word-break:break-all;margin-bottom:14px;color:#2B1D14;text-decoration:none}
-.cx-row{display:flex;gap:10px;flex-wrap:wrap}
-.cx-row button,.cx-row a{flex:1;min-width:130px;padding:12px;border-radius:999px;border:1px solid #CF4318;background:#CF4318;color:#fff;font:inherit;font-weight:600;font-size:15px;cursor:pointer;text-decoration:none;text-align:center}
-.cx-row .g{background:#fff;color:#CF4318}
-.cx-close{margin-top:12px;background:none;border:0;color:#6B5A4C;font:inherit;font-size:14px;cursor:pointer;text-decoration:underline}
-
-/* same look as portfolio: terracotta titles, flat chips */
-.row h3{color:#CF4318}
-.chip{border-radius:4px}
-.top a.btn,.endcta a{border-radius:999px}
-
-/* match portfolio highlight band + chip */
-.win{border-left:0;border-radius:0;background:linear-gradient(90deg,#FFE7DA,#FFF1E8);padding:8px 14px;font-weight:500}
-.win b{font:700 1rem/1 var(--body);margin-right:0}
-.chip{font:500 .75rem/1 var(--mono);letter-spacing:.04em;padding:6px 10px;border-radius:8px}
-@media print{.win{padding:6px 12px}.win b{font-size:10pt}}
-
-/* closer to the portfolio: calmer header, emoji on section titles (screen only) */
-.em{margin-right:4px}
-@media print{.em{display:none}}
-@media screen{
-h1{font-size:clamp(2rem,5vw,2.75rem)}
-.photo{width:112px;height:112px}
-.about{font-size:1.1875rem}
-main{gap:44px}
-h2{padding-bottom:12px}
-}
-</style>
-<div class="cx-ov" id="cxOv" role="dialog" aria-modal="true" aria-label="Contact">
- <div class="cx-box">
-  <h4>Let's talk</h4>
-  <p>Tell me about your idea or your product.</p>
-  <a class="cx-mail" id="cxMail" href="mailto:agustina.bergara@gmail.com">agustina.bergara@gmail.com</a>
-  <div class="cx-row">
-   <button type="button" id="cxCopy">Copy email</button>
-   <a class="g" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=agustina.bergara@gmail.com&su=Hello%20Agustina">Write in Gmail</a>
+<header class="top">
+  <div class="top-in">
+    <p class="name"><a href="./" style="text-decoration:none">&larr; Portfolio</a></p>
+    <nav class="nav" aria-label="Resume">
+      <a href="Agustina_Bergara_Resume.pdf" download>Download PDF</a>
+      <a href="Agustina_Bergara_ES.pdf" download>Descargar en español</a>
+      <a class="pill" href="#contact">Contact</a>
+    </nav>
   </div>
-  <button type="button" class="cx-close" id="cxClose">Close</button>
- </div>
-</div>
-<script>
-(function(){
- var ov=document.getElementById('cxOv'),E='agustina.bergara@gmail.com';
- function open(e){e.preventDefault();ov.classList.add('on')}
- function close(){ov.classList.remove('on')}
- document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){ if(a.id!=='cxMail') a.addEventListener('click',open) });
- document.getElementById('cxClose').onclick=close;
- ov.addEventListener('click',function(e){if(e.target===ov)close()});
- document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
- document.getElementById('cxCopy').onclick=function(){
-  var b=this;function ok(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy email'},1800)}
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(E).then(ok,fb)}else fb();
-  function fb(){var t=document.createElement('textarea');t.value=E;document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(x){}document.body.removeChild(t)}
- };
-})();
-</script>
+</header>
 
-</body></html>
+<main class="wrap">
+  <section class="hero">
+    <div class="ident">
+      <p class="avail"><i></i>Available for freelance PM projects</p>
+      <h1 class="nm">Agustina Bergara Isasi</h1>
+      <div class="role-row"><span class="role">Product Manager</span></div>
+      <p class="contacts"><a href="mailto:agustina.bergara@gmail.com">agustina.bergara@gmail.com</a><a href="https://www.linkedin.com/in/agustina-bergara-isasi/" target="_blank" rel="noopener">linkedin.com/in/agustina-bergara-isasi</a><span>Punta del Este, Uruguay</span></p>
+      <p class="contacts"><span>Spanish native · English C2 · Works with US and Canada clients</span></p>
+    </div>
+    <div class="me-wrap"><img class="me" src="cv-photo.jpg" alt="Agustina Bergara Isasi"></div>
+  </section>
+  <p class="about">Product Manager with 6 years building and improving digital products for US startups, UNICEF and real estate. I start by <em>talking to the people who have the problem</em>, then build solutions that add real value to their lives. Industrial Designer by training, I now build AI-powered products.</p>
+
+  <section class="sec">
+    <h2>Experience</h2>
+    <div class="row"><div class="when">July 2026 – now</div><div><h3>Freelance Product Manager</h3><p class="co">Independent</p>
+      <p>Idea to launch: discovery, prototypes and MVPs, development and roadmap.</p>
+      <ul><li><b>Car dealership in Canada</b> (in progress): a system run by an AI agent to manage service appointments and auto parts sales. It reduces the parts customers order and never pick up, and gives a more complete follow-up of vehicle warranties. One dealership uses it, 5 more are waiting.</li>
+      <li><b>Maketa Wellness</b> (for a physio in Punta del Este): rehab routines app, used by 50 patients so far. Now building scheduling and patient rehab tracking.</li></ul>
+      <p class="res">In my freelance projects, cut MVP prototyping time from <b>2 weeks to 2 days</b></p></div></div>
+    <div class="row small"><div class="when">Sept 2026</div><div><h3>Own projects</h3><p class="co">Independent</p><p><b>Ola, dónde estás?</b> A surf app that tells you which beach has your kind of wave today. Designed and built by me with Claude Code.</p></div></div>
+    <div class="row"><div class="when">Mar 2025 – July 2026</div><div><h3>Project &amp; Product Manager</h3><p class="co">Buzhi · Uruguay</p>
+      <p>Ran real estate development projects in José Ignacio and Balneario Buenos Aires on my own, reporting directly to the CEO.</p>
+      <ul><li>Found and analyzed new investment and development opportunities.</li><li>Researched and managed vendors and budgets.</li><li>Optimized timelines, milestones and deliverables.</li></ul>
+      <p class="res">Reduced construction lead times by <b>15%</b> by spotting risks early</p></div></div>
+    <div class="row"><div class="when">2024 – 2025</div><div><h3>Product Marketing Manager</h3><p class="co">UNICEF · Uruguay</p>
+      <p>Consultancy to design and launch a new product that reaches new audiences and improves donor loyalty.</p>
+      <ul><li>Discovery, development and launch of the physical and digital subscription “Fábrica de Momentos”, later taken as a reference case for other countries.</li><li>Coordinated a cross-functional team of designers, marketing, developers and data specialists.</li></ul>
+      <p class="res">Launched in <b>9 months</b> and reached <b>100 subscribers</b> in the first 3 months</p></div></div>
+    <div class="row"><div class="when">2021 – 2024</div><div><h3>Product Manager</h3><p class="co">Bixlabs · Uruguay – USA</p>
+      <p>Built digital, user-centered products for startups and corporate clients in the United States.</p>
+      <ul><li>From discovery to launch, including user research and interviews for UX testing.</li><li>Planned, prioritized and managed the roadmap and backlog.</li><li>Led day to day work with design, QA and engineering, and talked directly with US clients and founders.</li></ul>
+      <p class="res">Acapedia: <b>800 doctors</b> earned their CME credits in the app in its first year</p></div></div>
+    <div class="row small"><div class="when">2019 – 2021</div><div><h3>Product Operations Manager</h3><p class="co">UOOPAA · Buenos Aires</p><p>Smartphone cases, from market research to industrial manufacturing.</p><p class="res">Cut mold development from <b>8 to 2 weeks</b></p></div></div>
+    <div class="row small"><div class="when">2012 – 2019</div><div><h3>Industrial Designer</h3><p class="co">Agencia BEE · Buenos Aires</p><p>Commercial furniture, exhibition stands and retail POP displays.</p></div></div>
+  </section>
+
+  <div class="two">
+    <section class="sec"><h2>Certifications</h2>
+      <div class="it"><b>Product Management: Foundations &amp; Stakeholder Collaboration · 2026</b><span>IBM online school</span></div>
+      <div class="it"><b>Product Management: An Introduction · 2026</b><span>IBM online school</span></div>
+      <div class="it"><b>AI Bootcamp · 2026</b><span>Jump Academy</span></div>
+      <div class="it"><b>Introduction to Claude Cowork · 2026</b><span>Claude Academy · Anthropic</span></div>
+      <div class="it"><b>Claude 101 · 2026</b><span>Claude Academy · Anthropic</span></div>
+      <div class="it"><b>Product Marketing Manager · 2023</b><span>PMM School</span></div>
+    </section>
+    <section class="sec"><h2>Education</h2>
+      <div class="it"><b>Product Manager · 2020</b><span>Coder House</span></div>
+      <div class="it"><b>Industrial Design · 2014 – 2019</b><span>Universidad de Palermo, Argentina</span></div>
+      <div class="it"><b>English teacher · 2011 – 2012</b><span>Alianza de Estados Unidos, Uruguay</span></div>
+    </section>
+  </div>
+
+  <section class="sec"><h2>Skills</h2>
+    <div class="sg"><p>Product</p><div class="chips"><span>Product discovery</span><span>Roadmap &amp; backlog</span><span>User research &amp; testing</span><span>Agile</span><span>Client &amp; vendor management</span><span>Decision making</span><span>Teamwork</span><span>Active listening</span></div></div>
+    <div class="sg"><p>AI tools</p><div class="chips"><span>Claude Code</span><span>Claude</span><span>ChatGPT</span><span>Gemini</span><span>NotebookLM</span></div></div>
+    <div class="sg"><p>Tools</p><div class="chips"><span>Figma</span><span>Notion</span><span>Miro</span><span>ClickUp</span><span>Asana</span><span>Trello</span><span>Monday</span><span>Netlify</span><span>GitHub</span><span>Canva</span><span>G-Suite</span></div></div>
+  </section>
+
+  <section class="contact" id="contact">
+    <p class="label">Contact</p>
+    <h2>Have a product problem worth solving?</h2>
+    <p>I am taking on freelance PM projects. Tell me what is not working and I will tell you how I would start.</p>
+    <a class="mail" href="mailto:agustina.bergara@gmail.com">agustina.bergara@gmail.com</a>
+  </section>
+</main>
+
+</body>
+</html>
