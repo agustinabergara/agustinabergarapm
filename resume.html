@@ -121,7 +121,13 @@ a { color: inherit; }
 .hero .ident { display: grid; gap: 14px; justify-items: start; min-width: 0; }
 .hero h1.nm { font: 700 clamp(2.25rem, 5.4vw, 3.5rem)/1.02 var(--display); letter-spacing: -0.025em; margin: 0; max-width: none; }
 .role-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
-.role { font: 500 0.8125rem/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; padding: 7px 12px; border-radius: 8px; background: var(--tint); color: var(--accent-ink); }
+.role { font: 600 clamp(1.15rem, 2.6vw, 1.5rem)/1.1 var(--display); letter-spacing: -0.01em; color: var(--accent-ink); }
+.meta { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; padding-left: 16px; border-left: 1px solid var(--line); font-size: 0.9375rem; color: var(--muted); }
+.meta a, .meta span { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; }
+.meta a:hover { color: var(--accent-ink); }
+.ico { width: 15px; height: 15px; flex: none; }
+.ico.line { fill: none; stroke: var(--accent-ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 680px) { .meta { padding-left: 0; border-left: 0; } }
 .contacts { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; font-size: 0.9375rem; color: var(--muted); }
 .contacts a { text-underline-offset: 3px; text-decoration-color: var(--line); }
 .contacts a:hover { color: var(--accent-ink); }
@@ -184,8 +190,7 @@ a { color: inherit; }
     <div class="ident">
       <p class="avail"><i></i>Available for freelance PM projects</p>
       <h1 class="nm">Agustina Bergara Isasi</h1>
-      <div class="role-row"><span class="role">Product Manager</span></div>
-      <p class="contacts"><a href="mailto:agustina.bergara@gmail.com">agustina.bergara@gmail.com</a><a href="https://www.linkedin.com/in/agustina-bergara-isasi/" target="_blank" rel="noopener">linkedin.com/in/agustina-bergara-isasi</a><span>Punta del Este, Uruguay</span></p>
+      <div class="role-row"><span class="role">Product Manager</span><span class="meta"><span><svg class="ico line" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Uruguay</span><a href="mailto:agustina.bergara@gmail.com"><svg class="ico line" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7.5 12 13.5l8.5-6"/></svg>Email</a><a href="https://www.linkedin.com/in/agustina-bergara-isasi/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#C8401A"/><path fill="#fff" d="M6.4 9.6h2.5V18H6.4zM7.65 5.8a1.45 1.45 0 1 1 0 2.9 1.45 1.45 0 0 1 0-2.9zM10.5 9.6h2.4v1.2c.4-.7 1.3-1.4 2.6-1.4 2.6 0 3.1 1.7 3.1 3.9V18h-2.5v-4.2c0-1-.02-2.3-1.4-2.3s-1.6 1.1-1.6 2.2V18h-2.5z"/></svg>LinkedIn</a></span></div>
       <p class="contacts"><span>Spanish native · English C2 · Works with US and Canada clients</span></p>
     </div>
     <div class="me-wrap"><img class="me" src="cv-photo.jpg" alt="Agustina Bergara Isasi"></div>
@@ -197,9 +202,10 @@ a { color: inherit; }
     <div class="row"><div class="when">July 2026 – now</div><div><h3>Freelance Product Manager</h3><p class="co">Independent</p>
       <p>Idea to launch: discovery, prototypes and MVPs, development and roadmap.</p>
       <ul><li><b>Car dealership in Canada</b> (in progress): a system run by an AI agent to manage service appointments and auto parts sales. It reduces the parts customers order and never pick up, and gives a more complete follow-up of vehicle warranties. One dealership uses it, 5 more are waiting.</li>
-      <li><b>Maketa Wellness</b> (for a physio in Punta del Este): rehab routines app, used by 50 patients so far. Now building scheduling and patient rehab tracking.</li></ul>
+      <li><b>Maketa Wellness</b> (for a physio in Punta del Este): rehab routines app, used by 50 patients so far. Now building scheduling and patient rehab tracking.</li>
+      <li><b>Usability test</b> for a marina marketplace (web, desktop and mobile): 3 types of users, 3 video walkthroughs, 47 prioritized tickets and a Top 5 of what to fix first.</li>
+      <li><b>Ola, dónde estás?</b> (own project): a surf app that tells you which beach has your kind of wave today. Designed and built by me with Claude Code.</li></ul>
       <p class="res">In my freelance projects, cut MVP prototyping time from <b>2 weeks to 2 days</b></p></div></div>
-    <div class="row small"><div class="when">Sept 2026</div><div><h3>Own projects</h3><p class="co">Independent</p><p><b>Ola, dónde estás?</b> A surf app that tells you which beach has your kind of wave today. Designed and built by me with Claude Code.</p></div></div>
     <div class="row"><div class="when">Mar 2025 – July 2026</div><div><h3>Project &amp; Product Manager</h3><p class="co">Buzhi · Uruguay</p>
       <p>Ran real estate development projects in José Ignacio and Balneario Buenos Aires on my own, reporting directly to the CEO.</p>
       <ul><li>Found and analyzed new investment and development opportunities.</li><li>Researched and managed vendors and budgets.</li><li>Optimized timelines, milestones and deliverables.</li></ul>

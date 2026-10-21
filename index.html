@@ -189,6 +189,12 @@ body.is-open .panel { transform: none; visibility: visible; transition-delay: 0s
 .quote footer { margin-top: 10px; font: 400 0.8125rem/1.3 var(--body); letter-spacing: 0; color: var(--muted); }
 .hint { margin: 0; padding: 14px 16px; border-radius: 12px; background: var(--panel); border: 1px dashed var(--line); color: var(--muted); font-size: 0.875rem; line-height: 1.45; }
 
+
+.service { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); display: grid; gap: 14px; justify-items: start; }
+.service h2 { font: 700 1.75rem/1.1 var(--display); letter-spacing: -0.02em; margin: 0; }
+.service p { margin: 0; max-width: 60ch; }
+.service ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; max-width: 60ch; }
+.service .recent { color: var(--muted); font-size: 0.9375rem; }
 </style>
 
 <header class="top">
@@ -230,6 +236,19 @@ body.is-open .panel { transform: none; visibility: visible; transition-delay: 0s
       <p class="label">5 projects</p>
     </div>
     <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="service" id="service">
+    <p class="label">Service</p>
+    <h2>Usability test for your website or app</h2>
+    <p>I use your product like a real user and find what is confusing, broken or slow. You get:</p>
+    <ul>
+      <li>A video walkthrough for each type of user</li>
+      <li>Clear tickets, one per problem, with priority and recommendations</li>
+      <li>A Top 5 list of what to fix first</li>
+      <li>One report you can open in any browser</li>
+    </ul>
+    <p class="recent">Recent work: usability test for a marina marketplace, on desktop and mobile.</p>
   </section>
 
   <section class="contact" id="contact">
