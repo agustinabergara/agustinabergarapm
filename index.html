@@ -194,24 +194,37 @@ body.is-open .panel { visibility: visible; opacity: 1; }
 .frame { position: relative; background: #17171b; box-shadow: 0 24px 40px -24px rgba(43,29,20,.65), 0 2px 0 rgba(255,255,255,.08) inset; cursor: zoom-in; transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s; width: max-content; }
 .frame:hover { transform: translateY(-4px) scale(1.015); }
 .frame img { display: block; width: auto; max-width: none; background: var(--panel); }
-.frame.phone { padding: 8px; border-radius: 36px; }
-.frame.phone img { border-radius: 28px; }
-.frame.phone::after { content: ""; position: absolute; left: 50%; bottom: 3px; width: 64px; height: 3px; margin-left: -32px; border-radius: 3px; background: rgba(255,255,255,.35); }
+.frame.phone { padding: 8px; border-radius: 38px; }
+.frame.phone img { border-radius: 30px; }
+.frame.phone::after { content: ""; position: absolute; left: 50%; bottom: 4px; width: 30%; height: 3px; margin-left: -15%; border-radius: 3px; background: #fff; mix-blend-mode: difference; opacity: .7; }
 .rail { --fh: min(400px, 46vh); }
 .frame.phone { font-size: calc(var(--fh) * 0.0315); }
 .frame.phone img { height: calc(var(--fh) - 16px - 1.6em); }
 .frame.phone.nb img { height: calc(var(--fh) - 16px); }
 .frame.browser img { height: calc(var(--fh) - 29px); }
 .frame.shot img { height: calc(var(--fh) - 2px); }
-.sb { position: relative; display: flex; align-items: center; justify-content: space-between; height: 1.6em; padding-inline: 1.3em; line-height: 1; }
-.sb b { position: absolute; left: 50%; translate: -50% 0; font: 600 0.8em/1 var(--body); letter-spacing: .01em; }
+.sb { position: relative; display: flex; align-items: center; justify-content: space-between; height: 1.6em; padding-inline: 1.5em; line-height: 1; }
+.sb b { font: 600 0.8em/1 var(--body); letter-spacing: .01em; }
+.sbr { display: flex; align-items: center; gap: .5em; }
+.frame.phone .sb::after { content: ""; position: absolute; left: 50%; top: .42em; width: 3em; height: .95em; margin-left: -1.5em; border-radius: 1em; background: #000; }
 .sb svg { height: .75em; width: auto; }
-.frame.phone .sb { border-radius: 28px 28px 0 0; }
-.frame.phone .sb + img { border-radius: 0 0 28px 28px; }
+.frame.phone .sb { border-radius: 30px 30px 0 0; }
+.frame.phone .sb + img { border-radius: 0 0 30px 30px; }
 .art { container-type: inline-size; }
 .art .ph { font-size: calc(clamp(88px, 56cqw, 138px) * 0.065); }
 .art .ph .sb { border-radius: 20px 20px 0 0; }
 .art .ph .sb + img { border-radius: 0; }
+.art .ph .sb::after { display: none; }
+.stack-wrap { display: grid; gap: 24px; padding-block: 4px 10px; }
+@media (min-width: 701px) {
+  .rail.stack { flex-wrap: wrap; overflow: visible; padding: 4px 0 6px; gap: 16px; scroll-snap-type: none; }
+  .rail.stack figure { container-type: inline-size; }
+  .rail.stack.ph-row figure { width: calc((100% - 64px) / 5); }
+  .rail.stack.br-row figure { width: calc((100% - 32px) / 3); }
+  .rail.stack .frame { width: 100%; }
+  .rail.stack .frame img { width: 100%; height: auto; }
+  .rail.stack .frame.phone { font-size: calc(100cqw * 0.0685); }
+}
 .frame.shot { border-radius: 12px; overflow: hidden; background: var(--panel); border: 1px solid var(--line); }
 .meta-row { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px 40px; align-items: center; padding-block: 20px; border-block: 1px solid var(--line); }
 .meta-row .facts { border: 0; padding: 0; }
@@ -379,19 +392,24 @@ const GAL = {
     ["img/acapedia-3.webp", "Pass it and the credit is yours.", "l"],
     ["img/acapedia-m2.webp", "Pick the special requirements you need.", "p"]],
   unicef: [
+    ["img/unicef-ad1.webp", "Instagram ad: books to read and share as a family.", "s"],
+    ["img/unicef-ad2.webp", "Instagram ad: recipes to cook healthy and share as a family.", "s"],
     ["img/unicef-2.webp", "Blupi welcomes families to the subscription.", "p"],
     ["img/unicef-p2.webp", "What families get at home each month.", "p"],
     ["img/unicef-p3.webp", "Sign up with one short form.", "p"],
-    ["img/unicef-1.webp", "The launch video on UNICEF Uruguay's Facebook.", "s"],
     ["img/unicef-3.webp", "The program presented on TV.", "s"]],
   rehab: [
-    ["img/maketa-4.webp", "The patient opens a link. No download, no account.", "p"],
-    ["img/maketa-5.webp", "One exercise at a time, with video and the physio's note.", "p"],
-    ["img/maketa-6.webp", "Rest timers between sets.", "p"],
-    ["img/maketa-7.webp", "It ends with a person: one tap to message the physio.", "p"],
-    ["img/maketa-1.webp", "The physio's list of routines.", "l"],
-    ["img/maketa-2.webp", "Building a routine: blocks, exercises, reps and notes.", "l"],
-    ["img/maketa-3.webp", "The same routine, ready to save as a PDF.", "l"]],
+    ["img/mk-p1.webp", "The patient opens a link. No download, no account.", "p"],
+    ["img/mk-p2.webp", "Summary of the routine: goal, materials and blocks.", "p"],
+    ["img/mk-p3.webp", "One exercise at a time, with video and the physio's note.", "p"],
+    ["img/mk-p4.webp", "Rest timer between sets, with what comes next.", "p"],
+    ["img/mk-p5.webp", "It ends with a person: one tap to message the physio.", "p"],
+    ["img/mk-a1.webp", "The physio signs in with email and password.", "l"],
+    ["img/mk-a2.webp", "Her list of routines: copy the link, edit, download a PDF.", "l"],
+    ["img/mk-a3.webp", "Building a routine: blocks, exercises, reps and notes.", "l"],
+    ["img/mk-a4.webp", "Adding an exercise from the library.", "l"],
+    ["img/mk-a5.webp", "Reusing a ready-made routine with a new patient.", "l"]],
+
   olas: [
     ["img/ola-1.webp", "Pick the kind of wave you love.", "p"],
     ["img/ola-2.webp", "Today's answer: where to go, and when.", "p"],
@@ -444,12 +462,13 @@ const CASES = [
     result: ["10 surfers are testing it, and we are checking the forecast against the water."] }
 ];
 
-const BAR = {"img/card-rehab.webp": ["#0d3b50", "#ffffff"], "img/card-olas.webp": ["#65abc9", "#111111"], "img/ola-1.webp": ["#64aac9", "#111111"], "img/ola-2.webp": ["#65abc9", "#111111"], "img/ola-3.webp": ["#67acc9", "#111111"], "img/ola-4.webp": ["#67acc9", "#111111"], "img/card-acapedia.webp": ["#f1f1f3", "#111111"], "img/maketa-4.webp": ["#0d3b50", "#ffffff"], "img/maketa-5.webp": ["#0d3b50", "#ffffff"], "img/maketa-6.webp": ["#0d3b50", "#ffffff"], "img/maketa-7.webp": ["#0d3b50", "#ffffff"], "img/acapedia-m1.webp": ["#f1f1f3", "#111111"], "img/acapedia-m2.webp": ["#f1f1f3", "#111111"]};
+const BAR = {"img/card-rehab.webp": ["#0d3b50", "#ffffff"], "img/card-olas.webp": ["#65abc9", "#111111"], "img/ola-1.webp": ["#64aac9", "#111111"], "img/ola-2.webp": ["#65abc9", "#111111"], "img/ola-3.webp": ["#67acc9", "#111111"], "img/ola-4.webp": ["#67acc9", "#111111"], "img/card-acapedia.webp": ["#f1f1f3", "#111111"], "img/mk-p1.webp": ["#152e39", "#ffffff"], "img/mk-p2.webp": ["#0d3b4f", "#ffffff"], "img/mk-p3.webp": ["#0d3b4f", "#ffffff"], "img/mk-p4.webp": ["#0d3b4f", "#ffffff"], "img/mk-p5.webp": ["#0d3b4f", "#ffffff"], "img/acapedia-m1.webp": ["#f1f1f3", "#111111"], "img/acapedia-m2.webp": ["#f1f1f3", "#111111"]};
 const SB_L = '<svg viewBox="0 0 32 12" aria-hidden="true" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/><path d="M22 4.2a8 8 0 0 1 11 0M24.4 7a4.6 4.6 0 0 1 6.2 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" transform="translate(-1 0)"/><circle cx="27.5" cy="10" r="1.3"/></svg>';
 const SB_R = '<svg viewBox="0 0 26 12" aria-hidden="true" fill="currentColor"><rect x=".5" y="1" width="20" height="10" rx="3" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1"/><rect x="2" y="2.5" width="15" height="7" rx="1.8"/><rect x="22" y="4" width="1.8" height="4" rx=".9" fill-opacity=".5"/></svg>';
+const SB_W = SB_L.replace('viewBox="0 0 32 12"', 'viewBox="20 0 14 12"');
 function statusBar(src) {
   const c = BAR[src]; if (!c) return "";
-  return '<div class="sb" style="background:' + c[0] + ';color:' + c[1] + '">' + SB_L + '<b>9:41</b>' + SB_R + '</div>';
+  return '<div class="sb" style="background:' + c[0] + ';color:' + c[1] + '">' + '<b>9:41</b><span class="sbr">' + SB_W + SB_R + '</span></div>';
 }
 const SLUG = { rehab: "maketa", olas: "ola" };
 const slugOf = function (c) { return SLUG[c.id] || c.id; };
@@ -500,13 +519,19 @@ function flip(card, opening, done) {
   anim.onfinish = function () { anim && anim.cancel(); anim = null; done && done(); };
 }
 
+function figHtml(s, k) { const ph = s[2] === "p", sh = s[2] === "s"; return '<figure class="' + s[2] + '"><div class="frame ' + (ph ? "phone" + (BAR[s[0]] ? "" : " nb") : sh ? "shot" : "browser") + '">' + (ph ? statusBar(s[0]) : sh ? "" : '<div class="bar"><i></i><i></i><i></i></div>') + '<img src="' + s[0] + '" alt="' + s[1] + '" data-k="' + k + '" loading="lazy"></div><figcaption>' + s[1] + '</figcaption></figure>'; }
+function stackHtml(g) {
+  const row = function (t, cls) { return '<div class="rail stack ' + cls + '" aria-label="Screenshots">' + g.map(function (s, k) { return s[2] === t ? figHtml(s, k) : ""; }).join("") + '</div>'; };
+  return '<div class="stack-wrap">' + row("p", "ph-row") + row("l", "br-row") + '</div>';
+}
 function render(c, i) {
   kicker.textContent = "Case " + (i + 1) + " of " + CASES.length;
   const g = GAL[c.id] || [];
   const rail = g.length
-    ? '<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous screens">←</button><div class="rail" tabindex="0" aria-label="Screenshots of ' + c.title + '">' +
-        g.map(function (s, k) { const ph = s[2] === "p", sh = s[2] === "s"; return '<figure class="' + s[2] + '"><div class="frame ' + (ph ? "phone" + (BAR[s[0]] ? "" : " nb") : sh ? "shot" : "browser") + '">' + (ph ? statusBar(s[0]) : sh ? "" : '<div class="bar"><i></i><i></i><i></i></div>') + '<img src="' + s[0] + '" alt="' + s[1] + '" data-k="' + k + '" loading="lazy"></div><figcaption>' + s[1] + '</figcaption></figure>'; }).join("") +
-      '</div><button class="rail-btn next" type="button" aria-label="Next screens">→</button></div>'
+    ? (c.id === "rehab" ? stackHtml(g) :
+      '<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous screens">←</button><div class="rail" tabindex="0" aria-label="Screenshots of ' + c.title + '">' +
+        g.map(figHtml).join("") +
+      '</div><button class="rail-btn next" type="button" aria-label="Next screens">→</button></div>')
     : "";
   const next = CASES[(i + 1) % CASES.length];
   const blocks = [
@@ -527,7 +552,8 @@ function render(c, i) {
   body.innerHTML = blocks.map(function (h, n) { return h.replace(/^<(\w+)/, '<$1 style="--n:' + n + '"'); }).join("");
   body.scrollTop = 0;
   lbList = g;
-  const r = body.querySelector(".rail");
+  body.querySelectorAll(".rail.stack").forEach(function (rr) { rr.addEventListener("click", function (e) { const im = e.target.closest("img"); if (im) openLb(+im.dataset.k); }); });
+  const r = body.querySelector(".rail-wrap .rail");
   if (r) {
     const step = function (d) { r.scrollBy({ left: d * Math.max(240, r.clientWidth * 0.7), behavior: reduce.matches ? "auto" : "smooth" }); };
     body.querySelector(".prev").addEventListener("click", function () { step(-1); });
