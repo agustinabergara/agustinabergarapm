@@ -392,8 +392,8 @@ const GAL = {
     ["img/acapedia-3.webp", "Pass it and the credit is yours.", "l"],
     ["img/acapedia-m2.webp", "Pick the special requirements you need.", "p"]],
   unicef: [
-    ["img/unicef-ad1.webp", "Instagram ad: books to read and share as a family.", "s"],
-    ["img/unicef-ad2.webp", "Instagram ad: recipes to cook healthy and share as a family.", "s"],
+    ["img/unicef-ig1.webp", "Instagram ad: books to read and share as a family.", "p"],
+    ["img/unicef-ig2.webp", "Instagram ad: recipes to cook healthy and share as a family.", "p"],
     ["img/unicef-2.webp", "Blupi welcomes families to the subscription.", "p"],
     ["img/unicef-p2.webp", "What families get at home each month.", "p"],
     ["img/unicef-p3.webp", "Sign up with one short form.", "p"],
@@ -520,6 +520,12 @@ function flip(card, opening, done) {
 }
 
 function figHtml(s, k) { const ph = s[2] === "p", sh = s[2] === "s"; return '<figure class="' + s[2] + '"><div class="frame ' + (ph ? "phone" + (BAR[s[0]] ? "" : " nb") : sh ? "shot" : "browser") + '">' + (ph ? statusBar(s[0]) : sh ? "" : '<div class="bar"><i></i><i></i><i></i></div>') + '<img src="' + s[0] + '" alt="' + s[1] + '" data-k="' + k + '" loading="lazy"></div><figcaption>' + s[1] + '</figcaption></figure>'; }
+function rowsHtml(g) {
+  const row = function (t, fh, label) {
+    return '<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous screens">←</button><div class="rail" tabindex="0" style="--fh:' + fh + '" aria-label="' + label + '">' + g.map(function (s, k) { return s[2] === t ? figHtml(s, k) : ""; }).join("") + '</div><button class="rail-btn next" type="button" aria-label="Next screens">→</button></div>';
+  };
+  return row("p", "min(560px, 64vh)", "Patient screens") + row("l", "min(460px, 54vh)", "Physio screens");
+}
 function stackHtml(g) {
   const row = function (t, cls) { return '<div class="rail stack ' + cls + '" aria-label="Screenshots">' + g.map(function (s, k) { return s[2] === t ? figHtml(s, k) : ""; }).join("") + '</div>'; };
   return '<div class="stack-wrap">' + row("p", "ph-row") + row("l", "br-row") + '</div>';
@@ -528,7 +534,7 @@ function render(c, i) {
   kicker.textContent = "Case " + (i + 1) + " of " + CASES.length;
   const g = GAL[c.id] || [];
   const rail = g.length
-    ? (c.id === "rehab" ? stackHtml(g) :
+    ? (c.id === "rehab" ? rowsHtml(g) :
       '<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous screens">←</button><div class="rail" tabindex="0" aria-label="Screenshots of ' + c.title + '">' +
         g.map(figHtml).join("") +
       '</div><button class="rail-btn next" type="button" aria-label="Next screens">→</button></div>')
@@ -553,13 +559,13 @@ function render(c, i) {
   body.scrollTop = 0;
   lbList = g;
   body.querySelectorAll(".rail.stack").forEach(function (rr) { rr.addEventListener("click", function (e) { const im = e.target.closest("img"); if (im) openLb(+im.dataset.k); }); });
-  const r = body.querySelector(".rail-wrap .rail");
-  if (r) {
+  body.querySelectorAll(".rail-wrap").forEach(function (w) {
+    const r = w.querySelector(".rail");
     const step = function (d) { r.scrollBy({ left: d * Math.max(240, r.clientWidth * 0.7), behavior: reduce.matches ? "auto" : "smooth" }); };
-    body.querySelector(".prev").addEventListener("click", function () { step(-1); });
-    body.querySelector(".next").addEventListener("click", function () { step(1); });
+    w.querySelector(".prev").addEventListener("click", function () { step(-1); });
+    w.querySelector(".next").addEventListener("click", function () { step(1); });
     r.addEventListener("click", function (e) { const im = e.target.closest("img"); if (im) openLb(+im.dataset.k); });
-  }
+  });
   const nx = body.querySelector(".nextcase");
   nx.addEventListener("click", function () { switchCase(+nx.dataset.next); });
 }
