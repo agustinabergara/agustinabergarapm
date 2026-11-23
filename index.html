@@ -228,6 +228,7 @@ body.is-open .panel { visibility: visible; opacity: 1; }
 .frame.shot { border-radius: 12px; overflow: hidden; background: var(--panel); border: 1px solid var(--line); }
 .meta-row { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px 40px; align-items: center; padding-block: 20px; border-block: 1px solid var(--line); }
 .meta-row .facts { border: 0; padding: 0; }
+.meta-row.solo { grid-template-columns: minmax(0, 1fr); }
 .meta-row .big { padding-left: 40px; border-left: 1px solid var(--line); }
 @media (max-width: 720px) { .meta-row { grid-template-columns: minmax(0, 1fr); } .meta-row .big { order: -1; padding-left: 0; border-left: 0; } }
 .frame.browser { border-radius: 12px; overflow: hidden; background: var(--panel); border: 1px solid #D8D0C6; }
@@ -330,7 +331,7 @@ body.is-open .panel { visibility: visible; opacity: 1; }
   <section class="work" id="work">
     <div class="work-head">
       <h2>My work</h2>
-      <p class="label">4 projects</p>
+      <p class="label">5 projects</p>
     </div>
     <div class="grid" id="grid"></div>
   </section>
@@ -383,7 +384,7 @@ body.is-open .panel { visibility: visible; opacity: 1; }
 </div>
 
 <script>
-const IMG = { acapedia: "img/card-acapedia.webp", unicef: "img/card-unicef.webp", rehab: "img/card-rehab.webp", olas: "img/card-olas.webp" };
+const IMG = { acapedia: "img/card-acapedia.webp", unicef: "img/card-unicef.webp", rehab: "img/card-rehab.webp", web: "img/card-maketa-web.webp", olas: "img/card-olas.webp" };
 const GAL = {
   acapedia: [
     ["img/acapedia-1.webp", "The feed: trusted articles, each with its CME credit.", "l"],
@@ -407,6 +408,15 @@ const GAL = {
     ["img/mk-a1.webp", "Her list of routines, filtered by body region: copy the link or edit.", "l"],
     ["img/mk-a2.webp", "Building a routine: blocks, exercises, reps and notes.", "l"],
     ["img/mk-a3.webp", "Adding an exercise from the video library.", "l"]],
+  web: [
+    ["img/mk-w5.webp", "The first screen: what Maketa does, and one button to book.", "p"],
+    ["img/mk-w6.webp", "Who the physio is, in her own words.", "p"],
+    ["img/mk-w7.webp", "How a consultation works, step by step.", "p"],
+    ["img/mk-w8.webp", "Booking opens WhatsApp. No forms.", "p"],
+    ["img/mk-w1.webp", "Home: a clear promise and one button to book.", "l"],
+    ["img/mk-w2.webp", "About the physio: her studies and her work with Olympic athletes.", "l"],
+    ["img/mk-w3.webp", "The four steps of a consultation.", "l"],
+    ["img/mk-w4.webp", "Where she works, and a WhatsApp button to book.", "l"]],
 
   olas: [
     ["img/ola-1.webp", "Pick the kind of wave you love.", "p"],
@@ -448,6 +458,15 @@ const CASES = [
     built: "A simple app: the physio builds a routine and sends it by link. No download, no account.",
     result: ["Used with real patients today.", "Patients follow their routines more than with the PDF."],
     quote: ["Now my patients feel like doing the exercises, and they improve faster.", "Macarena Vergara, physio (translated from Spanish)"] },
+  { id: "web", size: "", status: "Live", live: true, cat: "Website",
+    title: "Maketa Wellness website", tag: "From the first visit to a booked consultation.",
+    one: "The website of a physio and osteopathy practice: who she is, what osteopathy is, and how to book by WhatsApp.",
+    big: null,
+    role: ["Designer", "Writer", "Builder"], forWho: "Macarena Vergara, osteopath and physio in Punta del Este", see: ["maketawellness.com", "https://maketawellness.com"],
+    tasks: "Structure, copy, design and build. All of it.",
+    problem: "Osteopathy is hard to explain, and many people think it is just cracking bones. The practice needed one place to explain it, show the physio's work, and make booking easy.",
+    built: "A one-page website in Spanish: who the physio is, what osteopathy is, how a consultation works, the exercise app, and where she works. Every booking button opens WhatsApp.",
+    result: ["Live at maketawellness.com.", "Patients book by WhatsApp, straight with the physio."] },
   { id: "olas", size: "", status: "Testing", live: false, cat: "Surf app",
     title: "Ola, dónde estás?", tag: "Waves, no PhD in weather required.",
     one: "An app that tells surfers where the closest wave they will love is. No forecast charts.",
@@ -460,7 +479,7 @@ const CASES = [
     result: ["10 surfers are testing it, and we are checking the forecast against the water."] }
 ];
 
-const BAR = {"img/card-rehab.webp": ["#152e39", "#ffffff"], "img/card-olas.webp": ["#65abc9", "#111111"], "img/ola-1.webp": ["#64aac9", "#111111"], "img/ola-2.webp": ["#65abc9", "#111111"], "img/ola-3.webp": ["#67acc9", "#111111"], "img/ola-4.webp": ["#67acc9", "#111111"], "img/card-acapedia.webp": ["#f1f1f3", "#111111"], "img/mk-p1.webp": ["#203944", "#ffffff"], "img/mk-p2.webp": ["#ebf3f4", "#111111"], "img/mk-p3.webp": ["#ebf3f4", "#111111"], "img/mk-p4.webp": ["#ebf3f4", "#111111"], "img/mk-p5.webp": ["#203944", "#ffffff"], "img/acapedia-m1.webp": ["#f1f1f3", "#111111"], "img/acapedia-m2.webp": ["#f1f1f3", "#111111"]};
+const BAR = {"img/card-rehab.webp": ["#152e39", "#ffffff"], "img/card-olas.webp": ["#65abc9", "#111111"], "img/ola-1.webp": ["#64aac9", "#111111"], "img/ola-2.webp": ["#65abc9", "#111111"], "img/ola-3.webp": ["#67acc9", "#111111"], "img/ola-4.webp": ["#67acc9", "#111111"], "img/card-acapedia.webp": ["#f1f1f3", "#111111"], "img/mk-p1.webp": ["#203944", "#ffffff"], "img/mk-p2.webp": ["#ebf3f4", "#111111"], "img/mk-p3.webp": ["#ebf3f4", "#111111"], "img/mk-p4.webp": ["#ebf3f4", "#111111"], "img/mk-p5.webp": ["#203944", "#ffffff"], "img/acapedia-m1.webp": ["#f1f1f3", "#111111"], "img/acapedia-m2.webp": ["#f1f1f3", "#111111"], "img/card-maketa-web.webp": ["#eff0ec", "#111111"], "img/mk-w5.webp": ["#eff0ec", "#111111"], "img/mk-w6.webp": ["#fbf9f5", "#111111"], "img/mk-w7.webp": ["#eceeec", "#111111"], "img/mk-w8.webp": ["#fbf9f4", "#111111"]};
 const SB_L = '<svg viewBox="0 0 32 12" aria-hidden="true" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/><path d="M22 4.2a8 8 0 0 1 11 0M24.4 7a4.6 4.6 0 0 1 6.2 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" transform="translate(-1 0)"/><circle cx="27.5" cy="10" r="1.3"/></svg>';
 const SB_R = '<svg viewBox="0 0 26 12" aria-hidden="true" fill="currentColor"><rect x=".5" y="1" width="20" height="10" rx="3" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1"/><rect x="2" y="2.5" width="15" height="7" rx="1.8"/><rect x="22" y="4" width="1.8" height="4" rx=".9" fill-opacity=".5"/></svg>';
 const SB_W = SB_L.replace('viewBox="0 0 32 12"', 'viewBox="20 0 14 12"');
@@ -468,7 +487,7 @@ function statusBar(src) {
   const c = BAR[src]; if (!c) return "";
   return '<div class="sb" style="background:' + c[0] + ';color:' + c[1] + '">' + '<b>9:41</b><span class="sbr">' + SB_W + SB_R + '</span></div>';
 }
-const SLUG = { rehab: "maketa", olas: "ola" };
+const SLUG = { rehab: "maketa", web: "maketa-web", olas: "ola" };
 const slugOf = function (c) { return SLUG[c.id] || c.id; };
 CASES.find(function (c) { return c.id === "unicef"; }).quote = ["I am willing to help UNICEF through the subscription. I think it is great that they created a new product and that they don't only work with donations.", "A user (translated from Spanish)"];
 CASES.find(function (c) { return c.id === "olas"; }).quote = ["I can finally grab my board and go surfing, without checking a thousand forecasts or improvising.", "A surfer testing the app (translated from Spanish)"];
@@ -518,11 +537,12 @@ function flip(card, opening, done) {
 }
 
 function figHtml(s, k) { const ph = s[2] === "p", sh = s[2] === "s"; return '<figure class="' + s[2] + '"><div class="frame ' + (ph ? "phone" + (BAR[s[0]] ? "" : " nb") : sh ? "shot" : "browser") + '">' + (ph ? statusBar(s[0]) : sh ? "" : '<div class="bar"><i></i><i></i><i></i></div>') + '<img src="' + s[0] + '" alt="' + s[1] + '" data-k="' + k + '" loading="lazy"></div><figcaption>' + s[1] + '</figcaption></figure>'; }
-function rowsHtml(g) {
+function rowsHtml(g, labels) {
+  labels = labels || ["Patient screens", "Physio screens"];
   const row = function (t, fh, label) {
     return '<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous screens">←</button><div class="rail" tabindex="0" style="--fh:' + fh + '" aria-label="' + label + '">' + g.map(function (s, k) { return s[2] === t ? figHtml(s, k) : ""; }).join("") + '</div><button class="rail-btn next" type="button" aria-label="Next screens">→</button></div>';
   };
-  return row("p", "min(560px, 64vh)", "Patient screens") + row("l", "min(460px, 54vh)", "Physio screens");
+  return row("p", "min(560px, 64vh)", labels[0]) + row("l", "min(460px, 54vh)", labels[1]);
 }
 function stackHtml(g) {
   const row = function (t, cls) { return '<div class="rail stack ' + cls + '" aria-label="Screenshots">' + g.map(function (s, k) { return s[2] === t ? figHtml(s, k) : ""; }).join("") + '</div>'; };
@@ -532,7 +552,7 @@ function render(c, i) {
   kicker.textContent = "Case " + (i + 1) + " of " + CASES.length;
   const g = GAL[c.id] || [];
   const rail = g.length
-    ? (c.id === "rehab" ? rowsHtml(g) :
+    ? (c.id === "rehab" ? rowsHtml(g) : c.id === "web" ? rowsHtml(g, ["Phone screens", "Computer screens"]) :
       '<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous screens">←</button><div class="rail" tabindex="0" aria-label="Screenshots of ' + c.title + '">' +
         g.map(figHtml).join("") +
       '</div><button class="rail-btn next" type="button" aria-label="Next screens">→</button></div>')
@@ -541,10 +561,10 @@ function render(c, i) {
   const blocks = [
     '<div><p class="label">' + c.cat + '</p><p><span class="status s-' + c.status.toLowerCase().replace(" ", "") + '">' + c.status + '</span></p><h2 id="p-title">' + c.title + '</h2></div>',
     '<p class="tagline">' + c.tag + '</p>',
-    '<div class="meta-row"><dl class="facts"><dt>My role</dt><dd>' + c.role.map(function (r) { return '<span class="chip">' + r + '</span>'; }).join("") + '</dd>' +
+    '<div class="meta-row' + (c.big ? '' : ' solo') + '"><dl class="facts"><dt>My role</dt><dd>' + c.role.map(function (r) { return '<span class="chip">' + r + '</span>'; }).join("") + '</dd>' +
       (c.tasks ? '<dt>My tasks</dt><dd>' + c.tasks + '</dd>' : '') + '<dt>For</dt><dd>' + c.forWho + '</dd>' +
       (c.see ? '<dt>See it</dt><dd><a href="' + c.see[1] + '" target="_blank" rel="noopener">' + c.see[0] + '</a></dd>' : '') + '</dl>' +
-      '<div class="big"><b>' + c.big[0] + '</b><span>' + c.big[1] + '</span></div></div>',
+      (c.big ? '<div class="big"><b>' + c.big[0] + '</b><span>' + c.big[1] + '</span></div>' : '') + '</div>',
     c.quote ? '<blockquote class="quote">“' + c.quote[0] + '”<footer>' + c.quote[1] + '</footer></blockquote>' : "",
     rail,
     '<section class="sec"><h3>The problem</h3><p>' + c.problem + '</p></section>',
